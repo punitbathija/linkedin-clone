@@ -25,7 +25,10 @@ const Header = () => {
         <HeaderOptions Icon={BusinessCenterIcon} title="Jobs" />
         <HeaderOptions Icon={ChatIcon} title="Messaging" />
         <HeaderOptions Icon={NotificationsIcon} title="Notifications" />
-        <HeaderOptions avatar="" />
+        <HeaderOptions
+          avatar="https://avatars.githubusercontent.com/u/87932246?v=4"
+          title="Me"
+        />
       </div>
     </div>
   );
