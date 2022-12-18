@@ -6,8 +6,7 @@
     flex: 0.2;
     border-radius: 10px;
     text-align: center;
-    height: fit-content;
-    
+    height: fit-content; 
 }
 
 .sidebar_top > h2{
@@ -35,7 +34,7 @@
     border-top-right-radius: 10px;
     background-color: white;
     padding-bottom: 10px;
-    padding: 8px;
+    /* padding: 8px; */
 }
 
 .sidebar_top > img{
