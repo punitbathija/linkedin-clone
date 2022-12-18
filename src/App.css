@@ -1,11 +1,13 @@
 .app{
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: #f3f2ef;
+    align-items: center;
+    margin: 10px;
 }
 
 .app_body
 {
     display: flex;
-}
+    width: 100%;
+}   
