@@ -1,5 +1,5 @@
 .feed{
-    flex: 0.5;
+    flex: 0.6;
     margin: 0 20px;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .feed_input{
-    border: 1px solid lightgray;
-    border-radius: 30px;
+    border: 0.5px solid lightgray;
+    border-radius: 20px;
     display: flex;
     color: gray; 
     padding-left: 15px;
@@ -23,7 +23,6 @@
 
 .feed_input > form{
     display: flex;
-    width: 100%;
 }
 
 .feed_input > form > input{

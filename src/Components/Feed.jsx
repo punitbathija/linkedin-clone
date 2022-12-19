@@ -8,7 +8,6 @@ import EventNoteIcon from "@mui/icons-material/EventNote";
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 import Post from "./Post";
 import { initializeApp } from "firebase/app";
-
 import {
   getFirestore,
   collection,
@@ -16,6 +15,9 @@ import {
   onSnapshot,
   doc,
   addDoc,
+  Timestamp,
+  orderBy,
+  query,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -35,23 +37,30 @@ const Feed = () => {
 
   const colRef = collection(db, "posts");
 
-  const dbData = onSnapshot(colRef, (snapshot) => {
-    setPosts(
-      snapshot.docs.map((doc) => ({
-        id: doc.id,
-        data: doc.data(),
-      }))
-    );
-  });
+  const q = query(colRef, orderBy("timestamp", "desc"));
+
+  useEffect(() => {
+    const dbData = onSnapshot(q, colRef, (snapshot) => {
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+    });
+  }, []);
 
   const sendPost = (e) => {
     e.preventDefault();
     addDoc(colRef, {
       name: "Punit",
-      description: "Engineer",
+      description: "Software Engineer",
       message: input,
       photoUrl: "",
+      timestamp: Timestamp.fromMillis(Date.now()),
     });
+
+    setInput("");
   };
 
   return (
