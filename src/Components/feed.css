@@ -1,5 +1,5 @@
 .feed{
-    flex: 0.6;
+    flex: 0.5;
     margin: 0 20px;
 }
 
@@ -18,6 +18,7 @@
     display: flex;
     color: gray; 
     padding-left: 15px;
+    align-items: center;
 }
 
 .feed_input > form{
@@ -31,6 +32,7 @@
     margin-left: 10px;
     outline-width: 0;
     font-weight: 600;
+    height: 35px;
 }   
 
 .feed_input > form > button{
