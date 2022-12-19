@@ -37,9 +37,10 @@ const Feed = () => {
 
   const dbData = onSnapshot(colRef, (snapshot) => {
     setPosts(
-      snapshot.docs.map((doc) => {
-        data: doc.data();
-      })
+      snapshot.docs.map((doc) => ({
+        id: doc.id,
+        data: doc.data(),
+      }))
     );
   });
 
