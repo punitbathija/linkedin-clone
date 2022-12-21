@@ -26,12 +26,14 @@
 }
 
 .feed_input > form > input{
+    font-size: 16px;
     border: none;
     flex: 1;
     margin-left: 10px;
     outline-width: 0;
     font-weight: 600;
     height: 35px;
+    text-align: start;
 }   
 
 .feed_input > form > button{

@@ -8,10 +8,10 @@ import EventNoteIcon from "@mui/icons-material/EventNote";
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 import Post from "./Post";
 import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "../firebase";
 import {
   getFirestore,
   collection,
-  getDocs,
   onSnapshot,
   doc,
   addDoc,
@@ -20,14 +20,9 @@ import {
   query,
 } from "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCzVKJf4uOyQxyWYaLD39pkd0_Up2u2gnY",
-  authDomain: "linked-in-clone-464d9.firebaseapp.com",
-  projectId: "linked-in-clone-464d9",
-  storageBucket: "linked-in-clone-464d9.appspot.com",
-  messagingSenderId: "854248874047",
-  appId: "1:854248874047:web:a3295eef90c80aec7b988a",
-};
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
@@ -59,12 +54,13 @@ const Feed = () => {
       photoUrl: "",
       timestamp: Timestamp.fromMillis(Date.now()),
     });
-
+    toast.success("Post Created");
     setInput("");
   };
 
   return (
     <div className="feed">
+      <ToastContainer />
       <div className="feed_inputContainer">
         <div className="feed_input">
           <CreateIcon />

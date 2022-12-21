@@ -7,7 +7,7 @@
 
 .post_header{
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
 }
 
@@ -18,14 +18,17 @@
 .post_info > p {
     font-size: 12px;
     color: gray;
+    margin-top: -10px;
 }
 
 .post_body{
     overflow-wrap: anywhere;
+    display: flex;
 }
 
 .post_info > h2 {
     font-size: 15px;
+    text-align: start;
 }
 
 .post_buttons{
