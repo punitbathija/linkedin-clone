@@ -1,4 +1,35 @@
 .widget{
+    border:  1px solid lightgray;
+    position: sticky;
+    top: 80px;
     flex: 0.2;
-    border:  1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+h2{
+    font-size: 20px;
+}
+
+.icon{
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+
+.icons{
+    margin-bottom: -7px;
+}
+
+.news{
+    display: flex;
+    flex-direction: column;
+}
+
+.news_head{
+    width: fit-content;
+    font-size: 16px;
+    margin: 15px;
+    font-weight: 500;
 }

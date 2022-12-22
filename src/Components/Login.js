@@ -70,12 +70,7 @@ const Login = () => {
       <div className="login">
         <img src="https://cdn.sanity.io/images/599r6htc/localized/2dd026fa07535863f16a767a0b43bef597512319-1106x860.png?w=1200&q=70&fit=max&auto=format"></img>
         <h2>Login or Register</h2>
-        <p>
-          Not a Member?{" "}
-          <span onClick={register} style={{ color: "blue" }}>
-            Register
-          </span>
-        </p>
+
         <form>
           <label>Full Name</label>
           <input
@@ -105,10 +100,19 @@ const Login = () => {
             type="password"
             placeholder="Enter password"
           />
+
           <button type="submit" onClick={loginToApp}>
             Get In
           </button>
         </form>
+        <p>
+          Not a Member?
+          <span onClick={register} style={{ color: "blue" }}>
+            Register
+          </span>
+          <br />
+          Fill The details and click Register
+        </p>
       </div>
       <ToastContainer position="bottom-left" />
     </>
