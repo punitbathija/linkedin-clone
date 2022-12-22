@@ -9,6 +9,7 @@ import Login from "./Components/Login";
 import { firebaseConfig } from "./firebase";
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Widget from "./Components/Widget";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -42,6 +43,7 @@ function App() {
         <div className="app_body">
           <Sidebar />
           <Feed />
+          <Widget />
         </div>
       )}
     </div>

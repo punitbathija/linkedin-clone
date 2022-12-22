@@ -12,11 +12,11 @@
 }
 
 .post_info{
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .post_info > p {
-    font-size: 12px;
+    font-size: 14px;
     color: gray;
     margin-top: -10px;
 }

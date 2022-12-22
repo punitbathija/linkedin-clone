@@ -8,8 +8,8 @@ import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import ChatIcon from "@mui/icons-material/Chat";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { useDispatch } from "react-redux";
-import { logout } from "../features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "../features/userSlice";
 import { getAuth, signOut } from "firebase/auth";
 import { firebaseConfig } from "../firebase";
 import { initializeApp } from "firebase/app";
@@ -31,29 +31,27 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
-      <ToastContainer position="bottom-left" />
-      <div className="header-left">
-        <img src={logo} alt="" />
-        <div className="header_search">
-          <SearchIcon />
-          <input type="text" placeholder="Search" />
+    <>
+      <div className="header">
+        <div className="header-left">
+          <img src={logo} alt="" />
+          <div className="header_search">
+            <SearchIcon />
+            <input type="text" placeholder="Search" />
+          </div>
+        </div>
+
+        <div className="header-right">
+          <HeaderOptions Icon={HomeIcon} title="Home" />
+          <HeaderOptions Icon={SupervisorAccountIcon} title="My Network" />
+          <HeaderOptions Icon={BusinessCenterIcon} title="Jobs" />
+          <HeaderOptions Icon={ChatIcon} title="Messaging" />
+          <HeaderOptions Icon={NotificationsIcon} title="Notifications" />
+          <HeaderOptions title="Me" onClick={logOutOfApp} avatar={true} />
         </div>
       </div>
-
-      <div className="header-right">
-        <HeaderOptions Icon={HomeIcon} title="Home" />
-        <HeaderOptions Icon={SupervisorAccountIcon} title="My Network" />
-        <HeaderOptions Icon={BusinessCenterIcon} title="Jobs" />
-        <HeaderOptions Icon={ChatIcon} title="Messaging" />
-        <HeaderOptions Icon={NotificationsIcon} title="Notifications" />
-        <HeaderOptions
-          avatar="https://avatars.githubusercontent.com/u/87932246?v=4"
-          title="Me"
-          onClick={logOutOfApp}
-        />
-      </div>
-    </div>
+      <ToastContainer position="bottom-left" />
+    </>
   );
 };
 
